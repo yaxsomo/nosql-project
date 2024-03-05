@@ -82,5 +82,63 @@ This project involves generating dummy data for various sensors and storing it i
 ```
 
 
-
+## Sensors Details
+```json
+[
+  {
+    "id": 1,
+    "name": "Lidar",
+    "type": "Distance Sensor",
+    "manufacturer": "SICK",
+    "model": "TiM150-3010300",
+    "details": {
+      "range": "0.1m to 10m",
+      "accuracy": "±0.1%"
+    }
+  },
+  {
+    "id": 2,
+    "name": "9-Axis IMU",
+    "type": "Inertial Measurement Unit",
+    "manufacturer": "Bosch",
+    "model": "BNO055",
+    "details": {
+      "axes": 9,
+      "communication": ["I2C", "SPI"]
+    }
+  },
+  {
+    "id": 3,
+    "name": "Barometer",
+    "type": "Atmospheric Pressure Sensor",
+    "manufacturer": "Bosch",
+    "model": "BME680",
+    "details": {
+      "measures": ["pressure", "temperature", "humidity", "gas resistance"]
+    }
+  },
+  {
+    "id": 4,
+    "name": "GPS",
+    "type": "Global Positioning System",
+    "manufacturer": "UBlox",
+    "model": "SAM-M10Q-00B",
+    "details": {
+      "tracking_channels": 22
+    }
+  },
+  {
+    "id": 5,
+    "name": "Ultrasonic Sensor",
+    "type": "Distance Sensor",
+    "manufacturer": "Unknown",
+    "model": "HC-SR04",
+    "details": {
+      "range": "2cm to 400cm",
+      "resolution": "0.3cm",
+      "accuracy": "±3mm"
+    }
+  }
+]
+```
 
