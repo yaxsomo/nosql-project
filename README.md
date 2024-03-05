@@ -10,8 +10,7 @@ This project involves generating dummy data for various sensors and storing it i
 
 ```json
 {
-  "sensor_type": "Lidar",
-  "model": "SICK TiM150-3010300",
+  "sensor_id": 1,
   "timestamp": "YYYY-MM-DDTHH:MM:SS",
   "measurement": {
     "distance": 25.3,
@@ -23,8 +22,7 @@ This project involves generating dummy data for various sensors and storing it i
 ### 9-Axis IMU (Bosh BNO055)
 ```json
 {
-  "sensor_type": "IMU",
-  "model": "Bosch BNO055",
+  "sensor_id": 2,
   "timestamp": "YYYY-MM-DDTHH:MM:SS",
   "acceleration": {
     "x": 0.1,
@@ -46,8 +44,7 @@ This project involves generating dummy data for various sensors and storing it i
 ### Barometer (Bosh BME680)
 ```json
 {
-  "sensor_type": "Barometer",
-  "model": "Bosch BME680",
+  "sensor_id": 3,
   "timestamp": "YYYY-MM-DDTHH:MM:SS",
   "pressure": 1013.25,
   "temperature": 23.5,
@@ -59,8 +56,7 @@ This project involves generating dummy data for various sensors and storing it i
 ### GPS (SAM-M10Q-00B)
 ```json
 {
-  "sensor_type": "GPS",
-  "model": "SAM-M10Q-00B",
+  "sensor_id": 4,
   "timestamp": "YYYY-MM-DDTHH:MM:SS",
   "latitude": 37.7749,
   "longitude": -122.4194,
@@ -71,8 +67,7 @@ This project involves generating dummy data for various sensors and storing it i
 ### Ultrasonic Sensor (HC-SR04)
 ```json
 {
-  "sensor_type": "Ultrasonic Sensor",
-  "model": "HC-SR04",
+  "sensor_id": 5,
   "timestamp": "YYYY-MM-DDTHH:MM:SS",
   "distance": 10.2
 }
