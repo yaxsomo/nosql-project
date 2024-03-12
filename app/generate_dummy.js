@@ -20,7 +20,7 @@ function measurements_generate() {
     for (let i = 0; i < N_ELEMENTS; i++) {
       lidarData.push({
         sensor_id: 1,
-        timestamp: random_date(new Date(2024, 3, 1), new Date()).toISOString(),
+        timestamp: random_date(new Date(2024, 2, 1), new Date()).toISOString(),
         measurement: {
           distance: Math.random() * 9.9 + 0.1, // Range: 0.1m to 10m
           angle: Math.random() * 360
