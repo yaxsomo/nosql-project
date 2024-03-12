@@ -76,6 +76,28 @@ app.get('/sensors', async (req, res) => {
   }
 });
 
+app.get('/joint1', async (req, res) => {
+  try {
+    const db = mongoClient.db('sensors_db');
+    const result = db.collection('sensors').aggregate([
+      {
+          $lookup: {
+              from: "measurements",
+              localField: "id",
+              foreignField: "sensor_id",
+              as: "sensorMeasures"
+          }
+      }
+    ]);
+    res.send(result);
+  } catch (error) {
+    console.error('Error making data joint:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
+
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
