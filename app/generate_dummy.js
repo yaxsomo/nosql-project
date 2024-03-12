@@ -3,7 +3,7 @@
 
 const N_ELEMENTS = 100
 
-function random_date() {
+function random_date(start, end) {
   return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 
 }
@@ -163,6 +163,6 @@ function sensors_generate() {
   }
   
   module.exports = {
-    measurements_generate, sensors_generate, random_date
+    measurements_generate, sensors_generate
   };
   
