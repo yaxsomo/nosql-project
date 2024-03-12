@@ -4,6 +4,59 @@
 
 This project involves generating dummy data for various sensors and storing it in a NoSQL database. Below are the sensors used in this project along with their data formats:
 
+## How to launch the project
+
+### Requirements
+For this project you'll need to install :
+
+- Docker Desktop
+- Node.js
+
+### Docker container execution
+
+First thing first, on the project root, you have to create the docker container with this bash command :
+
+```bash
+docker compose up -d
+```
+
+The next thing to do, is to execute the Docker container with this command :
+
+```bash
+docker exec -it nosql-project-redis-1 /bin/bash
+```
+
+NOTE : If the command fails with the 'permission denied' error, just add 'sudo' before the command
+
+
+Now your docker container is fired up!
+
+### Node program execution
+
+To execute the actual program, you'll have to go into the /app folder and execute this command from another terminal instance :
+
+```bash
+node index.js
+```
+
+To make sure the program is executing correctly, you'll get this output on the terminal :
+
+```bash
+Server is running on port 3000
+Redis is ready
+```
+
+### Available routes :
+
+#### localhost:3000/measurements
+
+Here you'll find all the Sensor data measurements Cache Database
+
+#### localhost:3000/sensors
+
+Here you'll find all the Sensors list Cache Database
+
+
 ## Sensors and Data Formats
 
 ### Lidar (SICK TiM150-3010300)
