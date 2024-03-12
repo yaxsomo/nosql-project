@@ -3,6 +3,12 @@
 
 const N_ELEMENTS = 100
 
+function random_date() {
+  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+
+}
+
+
 function measurements_generate() {
     const lidarData = [];
     const imuData = [];
@@ -14,7 +20,7 @@ function measurements_generate() {
     for (let i = 0; i < N_ELEMENTS; i++) {
       lidarData.push({
         sensor_id: 1,
-        timestamp: new Date().toISOString(),
+        timestamp: random_date(new Date(2024, 3, 1), new Date()).toISOString(),
         measurement: {
           distance: Math.random() * 9.9 + 0.1, // Range: 0.1m to 10m
           angle: Math.random() * 360
@@ -26,7 +32,7 @@ function measurements_generate() {
     for (let i = 0; i < N_ELEMENTS; i++) {
       imuData.push({
         sensor_id: 2,
-        timestamp: new Date().toISOString(),
+        timestamp: random_date(new Date(2024, 3, 1), new Date()).toISOString(),
         measurement: {
           acceleration: {
             x: Math.random() * 20 - 10, // Range: -10 m/s^2 to 10 m/s^2
@@ -51,7 +57,7 @@ function measurements_generate() {
     for (let i = 0; i < N_ELEMENTS; i++) {
       barometerData.push({
         sensor_id: 3,
-        timestamp: new Date().toISOString(),
+        timestamp: random_date(new Date(2024, 3, 1), new Date()).toISOString(),
         measurement: {
           pressure: Math.random() * 800 + 300, // Range: 300hPa to 1100hPa
           temperature: Math.random() * 125 - 40, // Range: -40°C to +85°C
@@ -65,7 +71,7 @@ function measurements_generate() {
     for (let i = 0; i < N_ELEMENTS; i++) {
       gpsData.push({
         sensor_id: 4,
-        timestamp: new Date().toISOString(),
+        timestamp: random_date(new Date(2024, 3, 1), new Date()).toISOString(),
         measurement: {
           latitude: Math.random() * 180 - 90, // Range: -90° to +90°
           longitude: Math.random() * 360 - 180, // Range: -180° to +180°
@@ -79,7 +85,7 @@ function measurements_generate() {
     for (let i = 0; i < N_ELEMENTS; i++) {
       ultrasonicData.push({
         sensor_id: 5,
-        timestamp: new Date().toISOString(),
+        timestamp: random_date(new Date(2024, 3, 1), new Date()).toISOString(),
         measurement: {
           distance: Math.random() * 398 + 2 // Range: 2cm to 400cm
         }
@@ -157,6 +163,6 @@ function sensors_generate() {
   }
   
   module.exports = {
-    measurements_generate, sensors_generate
+    measurements_generate, sensors_generate, random_date
   };
   
