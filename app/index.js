@@ -8,7 +8,7 @@ const { measurements_generate, sensors_generate } = require('./generate_dummy.js
 const app = express();
 const client = redis.createClient(6379);
 
-const mongoClient = new MongoClient('mongodb://mongo:27017');
+const mongoClient = new MongoClient('mongodb://localhost:27017', { useUnifiedTopology: true });
 
 (async () => {
   client.on('error', (err) => {
@@ -39,6 +39,7 @@ const mongoClient = new MongoClient('mongodb://mongo:27017');
     if (measurementsCount === 0) {
       const measurementsData = measurements_generate();
       await measurementsCollection.insertMany(measurementsData);
+
       console.log('Dummy measurements data inserted into MongoDB');
     }
   } catch (error) {
