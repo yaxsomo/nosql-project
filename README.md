@@ -56,6 +56,18 @@ Here you'll find all the Sensor data measurements Cache Database
 
 Here you'll find all the Sensors list Cache Database
 
+#### localhost:3000/joint1
+
+Perform the fist aggregate operation. Regroups all the measurements by sensor ID and returns the result
+
+#### localhost:3000/joint2/timestamp
+
+Perform the second aggregate operation. Retreives all the measurements with the same timestamp and returns the result
+
+Query exemple : 
+```bash
+localhost:3000/joint2/2024-03-08T00:17:45.348Z
+```
 
 ## Sensors and Data Formats
 
