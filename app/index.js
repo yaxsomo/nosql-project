@@ -79,7 +79,7 @@ app.get('/sensors', async (req, res) => {
 app.get('/joint1', async (req, res) => {
   try {
     const db = mongoClient.db('sensors_db');
-    const result = db.collection('sensors').aggregate([
+    const result = await db.collection('sensors').aggregate([
       {
           $lookup: {
               from: "measurements",
@@ -88,13 +88,42 @@ app.get('/joint1', async (req, res) => {
               as: "sensorMeasures"
           }
       }
-    ]);
+    ]).toArray(); // Convert the cursor to an array
     res.send(result);
   } catch (error) {
     console.error('Error making data joint:', error);
     res.status(500).send('Internal Server Error');
   }
 });
+
+
+app.get('/joint2/:timestamp', async (req, res) => {
+  try {
+    const { timestamp_to_match } = req.params;
+    const db = mongoClient.db('sensors_db');
+    const result = await db.collection('measurements').aggregate([
+      {
+        $match: {
+          timestamp_to_match
+        }
+      },
+      {
+        $lookup: {
+          from: "sensors",
+          localField: "sensor_id",
+          foreignField: "id",
+          as: "sensorData"
+        }
+      }
+    ]).toArray(); // Convert the cursor to an array
+    res.send(result);
+  } catch (error) {
+    console.error('Error making data joint:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
 
 
 
