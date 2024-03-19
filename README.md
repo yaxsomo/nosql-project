@@ -11,6 +11,7 @@ For this project you'll need to install :
 
 - Docker Desktop
 - Node.js
+- MangoDB
 
 ### Docker container execution
 
