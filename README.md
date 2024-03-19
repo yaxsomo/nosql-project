@@ -15,7 +15,7 @@ For this project you'll need to install :
 
 ### Docker container execution
 
-First thing first, on the project root, you have to create the docker container with this bash command :
+First thing first, on the project's root folder, you have to create the docker container with this bash command :
 
 ```bash
 docker compose up -d
@@ -34,7 +34,7 @@ Now your docker container is fired up!
 
 ### Node program execution
 
-To execute the actual program, you'll have to go into the /app folder and execute this command from another terminal instance :
+Once the container is active, you'll have to go into the /app folder and execute this command from another terminal instance :
 
 ```bash
 node index.js
@@ -59,7 +59,7 @@ Here you'll find all the Sensors list Cache Database
 
 #### localhost:3000/joint1
 
-Perform the fist aggregate operation. Regroups all the measurements by sensor ID and returns the result
+Perform the first aggregate operation. Regroups all the measurements by sensor ID and returns the result
 
 #### localhost:3000/joint2/timestamp
 
