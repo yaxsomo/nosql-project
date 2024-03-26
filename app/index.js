@@ -1,11 +1,13 @@
 // index.js
 
 const express = require('express');
+const cors = require('cors'); // Import cors middleware
 const redis = require('redis');
 const { MongoClient } = require('mongodb');
 const { measurements_generate, sensors_generate } = require('./generate_dummy.js');
 
 const app = express();
+app.use(cors());
 const client = redis.createClient(6379);
 
 const mongoClient = new MongoClient('mongodb://localhost:27017', { useUnifiedTopology: true });

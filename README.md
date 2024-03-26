@@ -11,7 +11,10 @@ For this project you'll need to install :
 
 - Docker Desktop
 - Node.js
-- MangoDB
+- MongoDB
+- Cors
+
+The 3 last packages can be installed via NPM.
 
 ### Docker container execution
 
@@ -68,6 +71,34 @@ Perform the second aggregate operation. Retreives all the measurements with the 
 Query exemple : 
 ```bash
 localhost:3000/joint2/2024-03-08T00:17:45.348Z
+```
+
+## Data Visualization :
+
+This projects embeds HTML pages for a prettified visualization of the database queries.
+For this functionnality, you have to use the Live Server Extension from VS Code. Once you launched the live session, you can access the available routes.
+
+### Available routes :
+
+#### http://127.0.0.1:5500/app/measurements.html
+
+Here you'll find all the Sensor data measurements Cache Database
+
+#### http://127.0.0.1:5500/app/sensors.html
+
+Here you'll find all the Sensors list Cache Database
+
+#### http://127.0.0.1:5500/app/joint1.html
+
+Perform the first aggregate operation. Regroups all the measurements by sensor ID and returns the result
+
+#### http://127.0.0.1:5500/app/joint2.html?timestamp=TIMESTAMP_HERE
+
+Perform the second aggregate operation. Retreives all the measurements with the same timestamp and returns the result
+
+Query exemple : 
+```bash
+http://127.0.0.1:5500/app/joint2.html?timestamp=2024-03-08T20:19:13.977Z
 ```
 
 ## Sensors and Data Formats

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measurements Data Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h1>Measurements Data Visualization</h1>
+<h2>Measurements Data</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Sensor ID</th>
+        <th>Timestamp</th>
+        <th>Measurement</th>
+    </tr>
+    </thead>
+    <tbody id="measurementsData">
+    <!-- Measurements data will be dynamically inserted here -->
+    </tbody>
+</table>
+
+<script>
+    fetch('http://localhost:3000/measurements')
+        .then(response => response.json())
+        .then(data => {
+            const measurementsDataElement = document.getElementById('measurementsData');
+            measurementsDataElement.innerHTML = '';
+            data.forEach(measurement => {
+                const row = `
+                    <tr>
+                        <td>${measurement.sensor_id}</td>
+                        <td>${measurement.timestamp}</td>
+                        <td>${JSON.stringify(measurement.measurement)}</td>
+                    </tr>
+                `;
+                measurementsDataElement.innerHTML += row;
+            });
+        })
+        .catch(error => console.error('Error fetching measurements data:', error));
+</script>
+</body>
+</html>
