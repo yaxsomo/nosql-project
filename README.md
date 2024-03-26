@@ -6,9 +6,9 @@
     - [Requirements](#requirements)
     - [Docker Container Execution](#docker-container-execution)
     - [Node Program Execution](#node-program-execution)
-    - [Available Routes](#available-routes)
+    - [Available Routes](#available-routes-db)
 3. [Data Visualization](#data-visualization)
-    - [Available Routes](#available-routes-1)
+    - [Available Routes](#available-routes-html)
 4. [Sensors and Data Formats](#sensors-and-data-formats)
 5. [Sensors Details](#sensors-details)
 6. [Members of the Project](#members-of-the-project)
@@ -64,7 +64,7 @@ Server is running on port 3000
 Redis is ready
 ```
 
-### Available routes :
+### Available routes DB:
 
 #### localhost:3000/measurements
 
@@ -87,12 +87,12 @@ Query exemple :
 localhost:3000/joint2/2024-03-08T00:17:45.348Z
 ```
 
-## Data Visualization :
+### Data Visualization :
 
 This projects embeds HTML pages for a prettified visualization of the database queries.
 For this functionnality, you have to use the Live Server Extension from VS Code. Once you launched the live session, you can access the available routes.
 
-### Available routes :
+### Available routes HTML:
 
 #### http://127.0.0.1:5500/app/measurements.html
 
