@@ -243,7 +243,11 @@ http://127.0.0.1:5500/app/joint2.html?timestamp=2024-03-08T20:19:13.977Z
 ## Members of the project
 
 Yassine DEHHANI
+
 Emile BAILEY
+
 Baptiste GADEBILLE
+
 Lucas TARAIRE
+
 Bertil RANDONNET
