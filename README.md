@@ -1,5 +1,18 @@
 # NoSQL Project
 
+## Table of Contents
+1. [Overview](#overview)
+2. [How to Launch the Project](#how-to-launch-the-project)
+    - [Requirements](#requirements)
+    - [Docker Container Execution](#docker-container-execution)
+    - [Node Program Execution](#node-program-execution)
+    - [Available Routes](#available-routes)
+3. [Data Visualization](#data-visualization)
+    - [Available Routes](#available-routes-1)
+4. [Sensors and Data Formats](#sensors-and-data-formats)
+5. [Sensors Details](#sensors-details)
+6. [Members of the Project](#members-of-the-project)
+
 ## Overview
 
 This project involves generating dummy data for various sensors and storing it in a NoSQL database. Below are the sensors used in this project along with their data formats:
