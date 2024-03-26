@@ -13,6 +13,7 @@ For this project you'll need to install :
 - Node.js
 - MongoDB
 - Cors
+- Live Server Extension for VS Code
 
 The 3 last packages can be installed via NPM.
 
